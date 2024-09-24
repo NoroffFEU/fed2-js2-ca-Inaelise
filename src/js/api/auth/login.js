@@ -1,8 +1,8 @@
 import { API_AUTH_LOGIN } from "../constants";
 
 /**
- * This will login a user by sending the email and password to the authentication API
- * If successful, it stores the access token and user data in local storage
+ * This will login a user by sending the email and password to the authentication API.
+ * If successful, it stores the access token and user data in local storage.
  * @param {string} email This is the user's email
  * @param {string} password This is the user's password
  * @returns {object} The login data (access token and user) is returned

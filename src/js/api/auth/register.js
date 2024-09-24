@@ -1,7 +1,7 @@
 import { API_AUTH_REGISTER } from "../constants";
 
 /**
- * This will register a user by sending their information to Noroff's register API
+ * This will register a user by sending their information to Noroff's register API.
  * @param {string} name This is the name of the user
  * @param {string} email This is the user's email
  * @param {string} password This is the user's password
