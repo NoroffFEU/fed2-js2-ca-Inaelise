@@ -1,1 +1,3 @@
-alert("Single Post Page");
+import { viewPost } from "../../ui/post/viewPost";
+
+viewPost();
