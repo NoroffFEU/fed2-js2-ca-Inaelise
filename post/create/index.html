@@ -11,10 +11,10 @@
 
     <form name="createPost">
       <div>
-        <label for="image-url">Image url</label>
+        <label for="url">Image URL</label>
         <input
-          name="image"
-          id="image-url"
+          name="url"
+          id="url"
           type="url"
           placeholder="https://example.com"
           pattern="https://.*"
@@ -22,12 +22,12 @@
         />
       </div>
       <div>
-        <label for="create-content">Content</label>
-        <textarea name="content" id="create-content"></textarea>
+        <label for="title">Content</label>
+        <textarea name="title" id="title"></textarea>
       </div>
       <div>
-        <label for="create-tag">Tags</label>
-        <input type="text" name="tag" id="create-tag" />
+        <label for="tags">Tags</label>
+        <input type="text" name="tags" id="tags" />
       </div>
       <button>Create Post</button>
     </form>
