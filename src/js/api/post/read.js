@@ -20,6 +20,26 @@ export async function readPost(id) {
   throw new Error(`Could not fetch post with id: ${id}`);
 }
 
-export async function readPosts(limit = 12, page = 1, tag) {}
+export async function readPosts(limit = 12, page = 1) {
+  const url = new URL(API_SOCIAL_POSTS);
+
+  const token = localStorage.getItem("token");
+
+  const requestHeaders = getHeaders(token);
+
+  url.searchParams.append("limit", limit);
+  url.searchParams.append("page", page);
+
+  const response = await fetch(url, {
+    headers: requestHeaders,
+  });
+
+  if (response.ok) {
+    const { data } = await response.json();
+    return data;
+  }
+
+  throw new Error("Could not fetch posts");
+}
 
 export async function readPostsByUser(username, limit = 12, page = 1, tag) {}
