@@ -10,25 +10,29 @@ export async function viewPosts() {
     const ul = document.getElementById("post-list");
     ul.innerHTML = "";
 
-    posts.forEach((post) => {
+    const imagePosts = posts.filter((post) => post.media && post.media.url);
+
+    imagePosts.forEach((post) => {
       const listItem = document.createElement("li");
 
       const link = document.createElement("a");
       link.href = `/post/?id=${post.id}`;
 
-      if (post.media && post.media.url) {
-        const img = document.createElement("img");
-        img.src = post.media.url;
-        img.alt = post.media.alt || "Post image";
-        link.appendChild(img);
-      } else {
-        const placeholder = document.createElement("p");
-        placeholder.innerText = "No image available";
-        link.appendChild(placeholder);
-      }
+      const postContainer = document.createElement("div");
 
-      listItem.appendChild(link);
-      ul.appendChild(listItem);
+      const img = document.createElement("img");
+      img.src = post.media.url;
+      img.alt = post.media.alt || "Post image";
+
+      const title = document.createElement("h2");
+      title.textContent = post.title;
+
+      postContainer.append(img, title);
+      link.append(postContainer);
+
+      listItem.append(link);
+      ul.append(listItem);
+      console.log(posts);
     });
 
     updatePaginationButtons(posts.length);
@@ -43,8 +47,6 @@ function updatePaginationButtons(postCount) {
 
   prev.disabled = currentPage === 1;
   next.disabled = postCount < postsPerPage;
-
-  console.log(currentPage);
 }
 
 export function setupPagination() {
