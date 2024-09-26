@@ -1,6 +1,9 @@
 import { readPost } from "../api/post/read";
 import { activePostId } from "./activePostId";
 
+/**
+ * This function will populate the form fields with the existing data. If unsuccessful an error alert message pops up.
+ */
 export async function populateEditForm() {
   const postId = activePostId();
 

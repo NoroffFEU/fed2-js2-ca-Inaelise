@@ -1,6 +1,11 @@
 import { updatePost } from "../../api/post/update";
 import { activePostId } from "../../utilities/activePostId";
 
+/**
+ * This function will handle the form submission for updating a post.
+ * @param {*} event updates post on submit
+ * @returns If successful post is updated and redirects the user to the post page. If unsuccessful an error alert message pops up.
+ */
 export async function onUpdatePost(event) {
   event.preventDefault();
 
