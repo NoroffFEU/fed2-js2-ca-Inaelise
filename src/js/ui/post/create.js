@@ -1,5 +1,10 @@
 import { createPost } from "../../api/post/create";
 
+/**
+ * This function will handle the form submission for creating a post.
+ * @param {*} event creates post on submit
+ * @returns If successfull post is created and redirects the user to the post page. If unsuccessful an error alert message pops up.
+ */
 export async function onCreatePost(event) {
   event.preventDefault();
 
@@ -16,8 +21,6 @@ export async function onCreatePost(event) {
   data.media = media;
 
   data.tags = data.tags.split(",").map((tag) => tag.trim());
-
-  console.log(data);
 
   try {
     const newPost = await createPost(data);
