@@ -3,6 +3,10 @@ import { readPosts } from "../../api/post/read";
 let currentPage = 1;
 const postsPerPage = 12;
 
+/**
+ * This function will display the list of posts on the home page.
+ * @returns the list of posts if successful.
+ */
 export async function viewPosts() {
   try {
     const posts = await readPosts(postsPerPage, currentPage);
@@ -41,6 +45,10 @@ export async function viewPosts() {
   }
 }
 
+/**
+ * This function will update the pagination buttons based on the current page and number of posts.
+ * @param {number} postCount the total number of posts retrieved.
+ */
 function updatePaginationButtons(postCount) {
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
@@ -49,6 +57,9 @@ function updatePaginationButtons(postCount) {
   next.disabled = postCount < postsPerPage;
 }
 
+/**
+ * This function will set up event listeners for the pagination buttons to navigate through pages.
+ */
 export function setupPagination() {
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");

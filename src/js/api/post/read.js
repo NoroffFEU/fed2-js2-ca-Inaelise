@@ -25,6 +25,12 @@ export async function readPost(id) {
   throw new Error(`Could not fetch post with id: ${id}`);
 }
 
+/**
+ * This function will fetch a list of posts.
+ * @param {number} limit the maximum number of posts to retrieve. Defaults to 12.
+ * @param {number} page the page number to retrieve. Defaults to 1.
+ * @returns an array of post data if successful. If unsuccessful, throws an error.
+ */
 export async function readPosts(limit = 12, page = 1) {
   const url = new URL(API_SOCIAL_POSTS);
 
