@@ -2,6 +2,10 @@ import { readPost } from "../../api/post/read";
 import { activePostId } from "../../utilities/activePostId";
 import { onDeletePost } from "./delete";
 
+/**
+ * This function will display the data of a single post on the page.
+ * @returns the post container element if successful. If unsuccessful, throws an error an alerts the user of the error.
+ */
 export async function viewPost() {
   const postId = activePostId();
 
@@ -36,6 +40,6 @@ export async function viewPost() {
     return postContainer;
   } catch (error) {
     alert(error);
-    /* window.location.href = "/"; */
+    window.location.href = "/";
   }
 }

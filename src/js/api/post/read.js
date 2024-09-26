@@ -1,6 +1,11 @@
 import { API_SOCIAL_POSTS } from "../constants";
 import { headers as getHeaders } from "../headers";
 
+/**
+ * This function will fetch a post by its id.
+ * @param {number} id the id of the post that will be fetched.
+ * @returns the post data if successful. If not successful, throws an error.
+ */
 export async function readPost(id) {
   const url = `${API_SOCIAL_POSTS}/${id}`;
 
