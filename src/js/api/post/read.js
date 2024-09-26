@@ -19,7 +19,6 @@ export async function readPost(id) {
 
   if (response.ok) {
     const { data } = await response.json();
-    console.log(data);
     return data;
   }
   throw new Error(`Could not fetch post with id: ${id}`);
