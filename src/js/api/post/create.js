@@ -18,9 +18,6 @@ import { headers as getHeaders } from "../headers";
  */
 export async function createPost({ title, body, tags, media }) {
   const token = localStorage.getItem("token");
-  if (!token) {
-    throw new Error("No authorization token found. Please log in.");
-  }
 
   const requestHeaders = getHeaders(token);
 
