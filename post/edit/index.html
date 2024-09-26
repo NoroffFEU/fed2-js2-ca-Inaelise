@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,8 +11,30 @@
   <body>
     <h1>Edit Post</h1>
 
-    <form name="editPost">
-      <button>Edit Post</button>
+    <form name="editPost" id="update-post">
+      <div>
+        <label for="url">Image URL</label>
+        <input
+          name="url"
+          id="url"
+          type="url"
+          placeholder="https://example.com"
+          pattern="https://.*"
+        />
+      </div>
+      <div>
+        <label for="title">Title</label>
+        <input name="title" id="title" type="text" />
+      </div>
+      <div>
+        <label for="body">Content</label>
+        <textarea name="body" id="body"></textarea>
+      </div>
+      <div>
+        <label for="tags">Tags</label>
+        <input type="text" name="tags" id="tags" />
+      </div>
+      <button>Update</button>
     </form>
   </body>
 </html>
