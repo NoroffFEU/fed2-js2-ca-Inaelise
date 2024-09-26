@@ -13,8 +13,11 @@ export async function viewPost() {
     const img = document.createElement("img");
     img.src = post.media.url;
 
-    const title = document.createElement("p");
-    title.innerText = post.title;
+    const title = document.createElement("h2");
+    title.textContent = post.title;
+
+    const body = document.createElement("p");
+    body.textContent = post.body;
 
     const tags = document.createElement("p");
     tags.innerText = post.tags.join(", ");
@@ -40,7 +43,7 @@ export async function viewPost() {
       }
     };
 
-    postContainer.append(img, title, tags, editBtn, deleteBtn);
+    postContainer.append(img, title, body, tags, editBtn, deleteBtn);
     return postContainer;
   } catch (error) {
     alert(error);
