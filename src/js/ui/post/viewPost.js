@@ -24,12 +24,11 @@ export async function viewPost() {
     body.textContent = post.body;
 
     const tags = document.createElement("p");
-    tags.innerText = post.tags.join(", ");
+    tags.textContent = `Tags: ${post.tags.join(", ")}`;
 
     const editBtn = document.createElement("a");
-    editBtn.href += post.id;
-    editBtn.innerText = "Edit post";
-    //Add onclick event
+    editBtn.href = `/post/edit/?id=${postId}`;
+    editBtn.textContent = "Edit post";
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
@@ -37,6 +36,7 @@ export async function viewPost() {
     deleteBtn.addEventListener("click", onDeletePost);
 
     postContainer.append(img, title, body, tags, editBtn, deleteBtn);
+
     return postContainer;
   } catch (error) {
     alert(error);
