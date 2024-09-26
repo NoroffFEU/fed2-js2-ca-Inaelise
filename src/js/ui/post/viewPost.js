@@ -1,6 +1,6 @@
-import { deletePost } from "../../api/post/delete";
 import { readPost } from "../../api/post/read";
 import { activePostId } from "../../utilities/activePostId";
+import { onDeletePost } from "./delete";
 
 export async function viewPost() {
   const postId = activePostId();
@@ -28,20 +28,9 @@ export async function viewPost() {
     //Add onclick event
 
     const deleteBtn = document.createElement("button");
-    deleteBtn.innerText = "Delete";
-    deleteBtn.onclick = async () => {
-      try {
-        const userConfirm = window.confirm(
-          "Are you sure you want to delete this post?"
-        );
-        if (userConfirm) {
-          await deletePost(post.id);
-          window.location.href = "/";
-        }
-      } catch (error) {
-        alert(error.message);
-      }
-    };
+    deleteBtn.textContent = "Delete";
+    deleteBtn.dataset.postId = post.id;
+    deleteBtn.addEventListener("click", onDeletePost);
 
     postContainer.append(img, title, body, tags, editBtn, deleteBtn);
     return postContainer;
