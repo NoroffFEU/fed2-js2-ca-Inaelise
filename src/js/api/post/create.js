@@ -1,6 +1,19 @@
 import { API_SOCIAL_POSTS } from "../constants";
 import { headers as getHeaders } from "../headers";
 
+/**
+ * This function will create a new post by sending a POST request to the API.
+ * @param {string} title This is the title of the post
+ * @param {string} tags This is an array of tags for the post
+ * @param {object} media This is the media object for the post
+ * @returns {object} The data for the created post is returned
+ * @example
+ * const newPost = {
+ *  title: "New post"
+ *  tags: ["new", "tech"],
+ *  media: { url:"https://example.com/image.jpg", alt: "An example image" }
+ * };
+ */
 export async function createPost({ title, tags, media }) {
   const token = localStorage.getItem("token");
   if (!token) {
