@@ -14,9 +14,7 @@ export async function viewPosts() {
     const ul = document.getElementById("post-list");
     ul.innerHTML = "";
 
-    const imagePosts = posts.filter((post) => post.media && post.media.url);
-
-    imagePosts.forEach((post) => {
+    posts.forEach((post) => {
       const listItem = document.createElement("li");
 
       const link = document.createElement("a");
@@ -24,19 +22,24 @@ export async function viewPosts() {
 
       const postContainer = document.createElement("div");
 
-      const img = document.createElement("img");
-      img.src = post.media.url;
-      img.alt = post.media.alt || "Post image";
-
       const title = document.createElement("h2");
       title.textContent = post.title;
 
-      postContainer.append(img, title);
+      if (post.media && post.media.url) {
+        const img = document.createElement("img");
+        img.src = post.media.url;
+        img.alt = post.media.alt || "Post image";
+        postContainer.append(img, title);
+      } else {
+        const noImage = document.createElement("p");
+        noImage.textContent = "No image available";
+        postContainer.append(noImage, title);
+      }
+
       link.append(postContainer);
 
       listItem.append(link);
       ul.append(listItem);
-      console.log(posts);
     });
 
     updatePaginationButtons(posts.length);
