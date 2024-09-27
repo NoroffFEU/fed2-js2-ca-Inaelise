@@ -4,7 +4,7 @@ import { onDeletePost } from "./delete";
 
 /**
  * This function will display the data of a single post on the page.
- * @returns the post container element if successful. If unsuccessful, throws an error an alerts the user of the error.
+ * @returns the post container element if successful. If unsuccessful, an error alert message pops up.
  */
 export async function viewPost() {
   const postId = activePostId();
@@ -41,7 +41,7 @@ export async function viewPost() {
 
     return postContainer;
   } catch (error) {
-    alert(error);
+    alert(error.message);
     window.location.href = "/";
   }
 }
