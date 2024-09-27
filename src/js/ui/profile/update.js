@@ -1,6 +1,11 @@
 import { updateProfile } from "../../api/profile/update";
 import { activeUser } from "../../utilities/activeUser";
 
+/**
+ * This function will handle the form submission for updating a profile.
+ * @param {*} event updates profile on submit.
+ * @returns If successful profile is updated and redirects the user to the profile page. If unsuccessful an error alert message pops up.
+ */
 export async function onUpdateProfile(event) {
   event.preventDefault();
   const user = activeUser();
