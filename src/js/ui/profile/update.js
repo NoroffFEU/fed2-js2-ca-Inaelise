@@ -3,8 +3,7 @@ import { activeUser } from "../../utilities/activeUser";
 
 /**
  * This function will handle the form submission for updating a profile.
- * @param {*} event updates profile on submit.
- * @returns If successful profile is updated and redirects the user to the profile page. If unsuccessful an error alert message pops up.
+ * @param {Event} event updates profile on submit.
  */
 export async function onUpdateProfile(event) {
   event.preventDefault();

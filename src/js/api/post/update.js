@@ -3,12 +3,15 @@ import { headers as getHeaders } from "../headers";
 
 /**
  * This function will update a post with specific id in the API.
- * @param {number} id This is the id of the post
- * @param {string} title This is the title of the post
- * @param {string} body This is the body of the post
- * @param {string} tags This is an array of tags for the post
- * @param {object} media This is the media object for the post
- * @returns {object} The updated post data is returned
+ * @param {number} id This is the id of the post.
+ * @param {Object} postData the data to update the post with.
+ * @param {string} postData.title This is the title of the post.
+ * @param {string} postData.body This is the body of the post.
+ * @param {Array<string>} postData.tags This is an array of tags for the post.
+ * @param {Object} postData.media This is the media object for the post.
+ * @param {string} postData.media.url This is the URL of the media for the post.
+ * @param {string} postData.media.alt This is the alt text of the media for the post.
+ * @returns {Object} The updated post data is returned.
  */
 export async function updatePost(id, { title, body, tags, media }) {
   const url = `${API_SOCIAL_POSTS}/${id}`;

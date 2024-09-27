@@ -2,8 +2,7 @@ import { createPost } from "../../api/post/create";
 
 /**
  * This function will handle the form submission for creating a post.
- * @param {*} event creates post on submit
- * @returns If successful post is created and redirects the user to the post page. If unsuccessful an error alert message pops up.
+ * @param {Event} event creates post on submit.
  */
 export async function onCreatePost(event) {
   event.preventDefault();

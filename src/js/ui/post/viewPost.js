@@ -4,7 +4,7 @@ import { onDeletePost } from "./delete";
 
 /**
  * This function will display the data of a single post on the page.
- * @returns the post container element if successful. If unsuccessful, an error alert message pops up.
+ * @returns the post container element.
  */
 export async function viewPost() {
   const postId = activePostId();

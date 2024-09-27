@@ -2,13 +2,14 @@ import { API_AUTH_REGISTER } from "../constants";
 
 /**
  * This will register a user by sending their information to Noroff's register API.
- * @param {string} name This is the name of the user
- * @param {string} email This is the user's email
- * @param {string} password This is the user's password
- * @param {string} bio This is the user's bio (optional)
- * @param {string} banner URL to the user's banner (optional)
- * @param {string} avatar URL to the user's avatar (optional)
- * @returns {object} The registered data is returned
+ * @param {Object} user This is the register parameters.
+ * @param {string} user.name This is the name of the user
+ * @param {string} user.email This is the user's email
+ * @param {string} user.password This is the user's password
+ * @param {string} user.bio This is the user's bio (optional)
+ * @param {string} user.banner URL to the user's banner (optional)
+ * @param {string} user.avatar URL to the user's avatar (optional)
+ * @returns {Promise<Object>} The registered user data.
  * @example
  * const registerUser = await register({
  * name: "Kari Normann",

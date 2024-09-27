@@ -2,8 +2,7 @@ import { deletePost } from "../../api/post/delete";
 
 /**
  * This function will handle the delete post event when triggered by the delete button.
- * @param {*} event delete post on button click.
- * @returns If successful, an alert message pops up and the user is redirected to the home page. If unsuccessfull, an error alert message pops up.
+ * @param {Event} event delete post on button click.
  */
 export async function onDeletePost(event) {
   event.preventDefault();

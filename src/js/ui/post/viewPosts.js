@@ -5,7 +5,7 @@ const postsPerPage = 12;
 
 /**
  * This function will display the list of posts on the home page.
- * @returns the list of posts if successful.
+ * @returns the unordered list of posts.
  */
 export async function viewPosts() {
   try {

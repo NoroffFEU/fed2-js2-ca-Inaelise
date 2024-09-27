@@ -3,7 +3,7 @@ import { activeUser } from "../../utilities/activeUser";
 
 /**
  * This function will display the data of the user profile.
- * @returns the profile container element if successful. If unsuccessful, an error alert message pops up.
+ * @returns the profile container element.
  */
 export async function viewProfile() {
   const user = activeUser();
