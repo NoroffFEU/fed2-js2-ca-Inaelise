@@ -29,10 +29,12 @@ export async function viewPost() {
     const editBtn = document.createElement("a");
     editBtn.href = `/post/edit/?id=${postId}`;
     editBtn.textContent = "Edit post";
+    editBtn.classList.add("edit-btn");
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.dataset.postId = post.id;
+    deleteBtn.classList.add("delete-btn");
     deleteBtn.addEventListener("click", onDeletePost);
 
     postContainer.append(img, title, body, tags, editBtn, deleteBtn);
