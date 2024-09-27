@@ -1,6 +1,10 @@
 import { readProfile } from "../../api/profile/read";
 import { activeUser } from "../../utilities/activeUser";
 
+/**
+ * This function will display the data of the user profile.
+ * @returns the profile container element if successful. If unsuccessful, an error alert message pops up.
+ */
 export async function viewProfile() {
   const user = activeUser();
   try {

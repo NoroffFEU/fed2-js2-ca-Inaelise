@@ -1,6 +1,11 @@
 import { API_SOCIAL_PROFILES } from "../constants";
 import { headers as getHeaders } from "../headers";
 
+/**
+ * This function will fetch profile data from the API by username.
+ * @param {string} username the username of the profile.
+ * @returns {object} the profile data of the specified user. Throws an error if unsuccessful.
+ */
 export async function readProfile(username) {
   const userProfile = username || user?.name;
 
