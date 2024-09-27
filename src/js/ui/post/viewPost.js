@@ -26,6 +26,13 @@ export async function viewPost() {
     const tags = document.createElement("p");
     tags.textContent = `Tags: ${post.tags.join(", ")}`;
 
+    const likes = document.createElement("p");
+    likes.textContent = `Likes: ${post._count.reactions}`;
+
+    const likeBtn = document.createElement("button");
+    likeBtn.id = "like-btn";
+    likeBtn.textContent = "👍";
+
     const btnContainer = document.createElement("div");
 
     const editBtn = document.createElement("a");
@@ -40,7 +47,7 @@ export async function viewPost() {
     deleteBtn.addEventListener("click", onDeletePost);
 
     btnContainer.append(editBtn, deleteBtn);
-    postContainer.append(img, title, body, tags, btnContainer);
+    postContainer.append(img, title, body, tags, likes, likeBtn, btnContainer);
 
     return postContainer;
   } catch (error) {
