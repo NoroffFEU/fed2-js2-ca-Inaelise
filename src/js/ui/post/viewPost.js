@@ -26,6 +26,8 @@ export async function viewPost() {
     const tags = document.createElement("p");
     tags.textContent = `Tags: ${post.tags.join(", ")}`;
 
+    const btnContainer = document.createElement("div");
+
     const editBtn = document.createElement("a");
     editBtn.href = `/post/edit/?id=${postId}`;
     editBtn.textContent = "Edit post";
@@ -37,7 +39,8 @@ export async function viewPost() {
     deleteBtn.classList.add("delete-btn");
     deleteBtn.addEventListener("click", onDeletePost);
 
-    postContainer.append(img, title, body, tags, editBtn, deleteBtn);
+    btnContainer.append(editBtn, deleteBtn);
+    postContainer.append(img, title, body, tags, btnContainer);
 
     return postContainer;
   } catch (error) {
