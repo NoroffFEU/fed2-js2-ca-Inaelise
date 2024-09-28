@@ -36,6 +36,7 @@ export async function viewPost() {
     const likeBtn = document.createElement("button");
     likeBtn.id = "like-btn";
     likeBtn.textContent = "👍";
+    //Add event listener for adding likes
 
     const btnContainer = document.createElement("div");
     btnContainer.classList.add("btn-container");
@@ -57,6 +58,6 @@ export async function viewPost() {
     return postContainer;
   } catch (error) {
     alert(error.message);
-    /* window.location.href = "/"; */
+    window.location.href = "/";
   }
 }
