@@ -27,10 +27,14 @@ export async function register({ name, email, password, bio, banner, avatar }) {
     body: JSON.stringify({ name, email, password, bio, banner, avatar }),
   });
 
+  const result = await response.json();
+
   if (response.ok) {
-    const { data } = await response.json();
+    const { data } = result;
     return data;
   }
 
-  throw new Error("Could not register this account");
+  const errorMessage = result.errors.map((error) => error.message).join("\r\n");
+
+  throw new Error(errorMessage);
 }

@@ -30,11 +30,15 @@ export async function createPost({ title, body, tags, media }) {
     body: JSON.stringify({ title, body, tags, media }),
   });
 
+  const result = await response.json();
+
   if (response.ok) {
-    const { data } = await response.json();
+    const { data } = result;
     alert("post created!");
     return data;
   }
 
-  throw new Error("Could not create post");
+  const errorMessage = result.errors.map((error) => error.message).join("\r\n");
+
+  throw new Error(errorMessage);
 }

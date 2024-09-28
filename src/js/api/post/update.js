@@ -25,11 +25,15 @@ export async function updatePost(id, { title, body, tags, media }) {
     body: JSON.stringify({ title, body, tags, media }),
   });
 
+  const result = await response.json();
+
   if (response.ok) {
-    const { data } = await response.json();
-    alert("Post updated!");
+    const { data } = result;
+    alert(`Post with id: ${id} was updated!`);
     return data;
   }
 
-  throw new Error(`Could not update post with id: ${id}`);
+  const errorMessage = result.errors.map((error) => error.message).join("\r\n");
+
+  throw new Error(errorMessage);
 }

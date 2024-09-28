@@ -19,9 +19,8 @@ export async function deletePost(id) {
   });
 
   if (response.ok) {
-    alert("Post deleted!");
-    return true;
+    return await response.text();
   }
 
-  throw new Error("Could not delete post");
+  throw new Error("Could not delete post with id: " + id);
 }

@@ -20,13 +20,16 @@ export async function login({ email, password }) {
     body: JSON.stringify({ email, password }),
   });
 
+  const result = await response.json();
+
   if (response.ok) {
-    const { data } = await response.json();
+    const { data } = result;
     const { accessToken: token, ...user } = data;
     localStorage.token = token;
     localStorage.user = JSON.stringify(user);
     return data;
   }
+  const errorMessage = result.errors.map((error) => error.message).join("\r\n");
 
-  throw new Error("Could not login with this account");
+  throw new Error(errorMessage);
 }

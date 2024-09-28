@@ -17,11 +17,15 @@ export async function readPost(id) {
     headers: requestHeaders,
   });
 
+  const result = await response.json();
+
   if (response.ok) {
-    const { data } = await response.json();
+    const { data } = result;
+    console.log(data);
     return data;
   }
-  throw new Error(`Could not fetch post with id: ${id}`);
+  const error = result.errors.map((error) => error.message).join("\r\n");
+  throw new Error(error);
 }
 
 /**
@@ -44,12 +48,14 @@ export async function readPosts(limit = 12, page = 1) {
     headers: requestHeaders,
   });
 
+  const result = await response.json();
+
   if (response.ok) {
-    const { data } = await response.json();
+    const { data } = result;
     return data;
   }
-
-  throw new Error("Could not fetch posts");
+  const error = result.errors.map((error) => error.message).join("\r\n");
+  throw new Error(error);
 }
 
 export async function readPostsByUser(username, limit = 12, page = 1, tag) {}

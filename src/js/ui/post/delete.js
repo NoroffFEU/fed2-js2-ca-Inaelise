@@ -14,7 +14,8 @@ export async function onDeletePost(event) {
       "Are you sure you want to delete this post?"
     );
     if (userConfirm) {
-      await deletePost(postId);
+      deletePost(postId);
+      alert(`Post with id: ${postId} was deleted!`);
       window.location.href = "/";
     }
   } catch (error) {
