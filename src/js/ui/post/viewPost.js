@@ -14,8 +14,12 @@ export async function viewPost() {
 
     const postContainer = document.getElementById("post-container");
 
-    const img = document.createElement("img");
-    img.src = post.media.url;
+    if (post.media && post.media.url) {
+      const img = document.createElement("img");
+      img.src = post.media.url;
+      img.alt = post.media.alt || "Post image";
+      postContainer.appendChild(img);
+    }
 
     const title = document.createElement("h2");
     title.textContent = post.title;
@@ -47,11 +51,11 @@ export async function viewPost() {
     deleteBtn.addEventListener("click", onDeletePost);
 
     btnContainer.append(editBtn, deleteBtn);
-    postContainer.append(img, title, body, tags, likes, likeBtn, btnContainer);
+    postContainer.append(title, body, tags, likes, likeBtn, btnContainer);
 
     return postContainer;
   } catch (error) {
     alert(error.message);
-    window.location.href = "/";
+    /* window.location.href = "/"; */
   }
 }
