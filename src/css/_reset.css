@@ -103,3 +103,7 @@ textarea {
 textarea {
   height: 200px;
 }
+
+#post-container img {
+  width: 400px;
+}
