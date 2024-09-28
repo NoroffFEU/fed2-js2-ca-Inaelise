@@ -38,6 +38,7 @@ export async function viewPost() {
     likeBtn.textContent = "👍";
 
     const btnContainer = document.createElement("div");
+    btnContainer.classList.add("btn-container");
 
     const editBtn = document.createElement("a");
     editBtn.href = `/post/edit/?id=${postId}`;
