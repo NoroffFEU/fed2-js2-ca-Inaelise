@@ -34,7 +34,7 @@ export async function createPost({ title, body, tags, media }) {
 
   if (response.ok) {
     const { data } = result;
-    alert("post created!");
+    alert("Post created!");
     return data;
   }
 
