@@ -39,6 +39,7 @@ body {
 }
 
 a {
+  color: black;
   text-decoration: none;
 }
 
@@ -106,4 +107,11 @@ textarea {
 
 #post-container img {
   width: 400px;
+}
+
+#pagination {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
