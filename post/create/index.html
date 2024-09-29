@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,6 +10,29 @@
     <h1>Create Post</h1>
 
     <form name="createPost">
+      <div>
+        <label for="url">Image URL</label>
+        <input
+          name="url"
+          id="url"
+          type="url"
+          placeholder="https://example.com"
+          pattern="https://.*"
+          required
+        />
+      </div>
+      <div>
+        <label for="title">Title</label>
+        <input name="title" id="title" type="text" required />
+      </div>
+      <div>
+        <label for="body">Content</label>
+        <textarea name="body" id="body"></textarea>
+      </div>
+      <div>
+        <label for="tags">Tags</label>
+        <input type="text" name="tags" id="tags" />
+      </div>
       <button>Create Post</button>
     </form>
   </body>

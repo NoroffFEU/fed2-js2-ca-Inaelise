@@ -7,13 +7,11 @@
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-
   <body>
-    <h1>Edit Post</h1>
-
-    <form name="editPost" id="update-post">
+    <h1>Edit Profile</h1>
+    <form name="updateProfile">
       <div>
-        <label for="url">Image URL</label>
+        <label for="url">Avatar Image URL</label>
         <input
           name="url"
           id="url"
@@ -23,16 +21,8 @@
         />
       </div>
       <div>
-        <label for="title">Title</label>
-        <input name="title" id="title" type="text" />
-      </div>
-      <div>
-        <label for="body">Content</label>
-        <textarea name="body" id="body"></textarea>
-      </div>
-      <div>
-        <label for="tags">Tags</label>
-        <input type="text" name="tags" id="tags" />
+        <label for="bio">Bio</label>
+        <input name="bio" id="bio" type="text" />
       </div>
       <button>Update</button>
     </form>
