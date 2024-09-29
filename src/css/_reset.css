@@ -115,3 +115,7 @@ textarea {
   justify-content: space-between;
   margin-bottom: 50px;
 }
+
+#profile-container img {
+  width: 500px;
+}
