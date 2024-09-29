@@ -21,7 +21,6 @@ export async function readProfile(username) {
 
   if (response.ok) {
     const { data } = await response.json();
-    console.log(data);
     return data;
   }
   throw new Error(`Could not fetch profile for user with name: ${userProfile}`);
