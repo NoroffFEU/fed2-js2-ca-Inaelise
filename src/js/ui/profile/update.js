@@ -13,13 +13,13 @@ export async function onUpdateProfile(event) {
   const formData = new FormData(updateForm);
   const data = Object.fromEntries(formData.entries());
 
-  const media = {
+  const avatar = {
     url: data.url,
     alt: "",
   };
 
   delete data.url;
-  data.media = media;
+  data.avatar = avatar;
 
   try {
     await updateProfile(user.name, data);
