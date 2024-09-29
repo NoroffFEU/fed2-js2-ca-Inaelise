@@ -32,7 +32,7 @@ export async function viewPosts() {
         postContainer.append(img, title);
       } else {
         const noImage = document.createElement("p");
-        noImage.textContent = "No image available";
+        noImage.textContent = "(No image available)";
         postContainer.append(noImage, title);
       }
 
