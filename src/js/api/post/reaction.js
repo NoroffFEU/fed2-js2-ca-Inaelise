@@ -23,7 +23,6 @@ export async function likePost(postId, symbol = "👍") {
 
   if (!response.ok) {
     const result = await response.json();
-    console.log(result);
     const error = result.errors.map((error) => error.message).join("\r\n");
     throw new Error(error);
   }
