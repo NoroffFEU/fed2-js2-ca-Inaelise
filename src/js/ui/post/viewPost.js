@@ -1,6 +1,7 @@
 import { readPost } from "../../api/post/read";
 import { activePostId } from "../../utilities/activePostId";
 import { onDeletePost } from "./delete";
+import { likePost } from "../../api/post/reaction";
 
 /**
  * This function will display the data of a single post on the page.
@@ -31,12 +32,21 @@ export async function viewPost() {
     tags.textContent = `Tags: ${post.tags.join(", ")}`;
 
     const likes = document.createElement("p");
+    likes.id = "like-count";
     likes.textContent = `Likes: ${post._count.reactions}`;
 
     const likeBtn = document.createElement("button");
     likeBtn.id = "like-btn";
     likeBtn.textContent = "👍";
-    //Add event listener for adding likes
+    likeBtn.addEventListener("click", async () => {
+      try {
+        await likePost(postId);
+        const updatedPost = await readPost(postId);
+        likes.textContent = `Likes: ${updatedPost._count.reactions}`;
+      } catch (error) {
+        alert(`Error: ${error.message}`);
+      }
+    });
 
     const btnContainer = document.createElement("div");
     btnContainer.classList.add("btn-container");
