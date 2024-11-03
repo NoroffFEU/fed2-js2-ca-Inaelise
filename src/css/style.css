@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-secondary {
+    @apply border border-faded rounded-lg p-[5px] hover:bg-secondary hover:text-white transition-all duration-300 ease-in-out;
+  }
+}
