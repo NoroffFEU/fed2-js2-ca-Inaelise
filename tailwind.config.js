@@ -5,6 +5,8 @@ export default {
     extend: {
       colors: {
         main: "#ACE3D6",
+        secondary: "#1A362F",
+        faded: "rgba(0, 0, 0, 0.350)",
       },
       fontFamily: {
         body: ["Inter", "sans-serif"],
