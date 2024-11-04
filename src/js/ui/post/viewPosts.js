@@ -26,7 +26,7 @@ export async function viewPosts() {
         "border-2",
         "border-main",
         "shadow-box",
-        "md:w-[500px]",
+        "md:w-[300px]",
         "md:transition-all",
         "md:duration-500",
         "md:hover:scale-105"
@@ -34,6 +34,7 @@ export async function viewPosts() {
 
       const title = document.createElement("h2");
       title.textContent = post.title;
+      title.classList.add("p-2", "text-center", "font-medium", "text-sm");
 
       if (post.media && post.media.url) {
         const img = document.createElement("img");
@@ -43,12 +44,13 @@ export async function viewPosts() {
           "object-cover",
           "w-full",
           "h-[280px]",
-          "md:h-[500px]"
+          "md:h-[300px]"
         );
         postContainer.append(img, title);
       } else {
         const noImage = document.createElement("p");
         noImage.textContent = "(No image available)";
+        noImage.classList.add("pt-2", "text-xs", "text-center");
         postContainer.append(noImage, title);
       }
 
