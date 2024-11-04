@@ -79,10 +79,13 @@
       </div>
       <div class="pt-[170px] md:pt-[250px]">
         <h2 class="text-center py-6 text-lg font-semibold">All posts</h2>
-        <ul id="post-list" class="flex flex-col gap-10 items-center"></ul>
-        <div id="pagination">
-          <button id="prev">Previous</button>
-          <button id="next">Next</button>
+        <ul
+          id="post-list"
+          class="flex flex-col gap-10 items-center md:flex-row md:flex-wrap md:max-w-[1400px] md:m-auto md:justify-center"
+        ></ul>
+        <div id="pagination" class="pb-6 pt-8 flex gap-10 justify-center">
+          <button id="prev" class="btn-secondary">Previous</button>
+          <button id="next" class="btn-secondary">Next</button>
         </div>
       </div>
     </main>
