@@ -22,11 +22,13 @@
         <ul
           class="flex flex-col gap-4 items-center font-medium md:flex-row md:justify-end md:gap-8 md:px-4 md:text-sm"
         >
-          <li><a href="/">Home</a></li>
-          <li><a href="/profile/">My Profile</a></li>
-          <li><a href="/auth/login/">Log in</a></li>
+          <li>
+            <a class="hover" href="/">Home</a>
+          </li>
+          <li><a class="hover" href="/profile/">My Profile</a></li>
+          <li><a class="hover" href="/auth/login/">Log in</a></li>
           <!-- <li><a href="/auth/register/">Register</a></li> -->
-          <li><a href="/post/create/">Create</a></li>
+          <li><a class="hover" href="/post/create/">Create</a></li>
           <button class="btn-secondary logout-btn">Log out</button>
         </ul>
       </nav>
@@ -77,7 +79,7 @@
       </div>
       <div class="pt-[170px] md:pt-[250px]">
         <h2 class="text-center py-6 text-lg font-semibold">All posts</h2>
-        <ul id="post-list"></ul>
+        <ul id="post-list" class="flex flex-col gap-10 items-center"></ul>
         <div id="pagination">
           <button id="prev">Previous</button>
           <button id="next">Next</button>
