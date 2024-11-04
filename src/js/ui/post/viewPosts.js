@@ -21,6 +21,16 @@ export async function viewPosts() {
       link.href = `/post/?id=${post.id}`;
 
       const postContainer = document.createElement("div");
+      postContainer.classList.add(
+        "w-[280px]",
+        "border-2",
+        "border-main",
+        "shadow-box",
+        "md:w-[500px]",
+        "md:transition-all",
+        "md:duration-500",
+        "md:hover:scale-105"
+      );
 
       const title = document.createElement("h2");
       title.textContent = post.title;
@@ -29,6 +39,12 @@ export async function viewPosts() {
         const img = document.createElement("img");
         img.src = post.media.url;
         img.alt = post.media.alt || "Post image";
+        img.classList.add(
+          "object-cover",
+          "w-full",
+          "h-[280px]",
+          "md:h-[500px]"
+        );
         postContainer.append(img, title);
       } else {
         const noImage = document.createElement("p");
