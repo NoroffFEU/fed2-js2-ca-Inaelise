@@ -7,39 +7,81 @@
     <script type="module" src="/src/app.js"></script>
   </head>
 
-  <body class="font-body pt-[60px] bg-main">
+  <body class="font-body pt-[55px] bg-white">
     <header
-      class="bg-main flex justify-between p-3 fixed w-full top-0 drop-shadow"
+      class="bg-main flex justify-between p-3 fixed w-full top-0 drop-shadow z-20"
     >
-      <img class="w-[120px]" src="/images/noroff-logo.png" alt="Noroff Logo" />
+      <img
+        class="w-[100px] md:w-[120px]"
+        src="/images/noroff-logo.png"
+        alt="Noroff Logo"
+      />
       <nav
-        class="fixed top-[60px] left-0 bg-main w-full pt-3 pb-6 px-0 -translate-x-full transition-all duration-300 ease-in-out md:translate-x-0 md:transition-none md:top-0 md:bg-transparent md:py-5"
+        class="fixed top-[55px] left-0 bg-main w-full pt-3 pb-6 px-0 -translate-x-full transition-all duration-300 ease-in-out md:translate-x-0 md:transition-none md:top-0 md:bg-transparent md:py-5"
       >
         <ul
           class="flex flex-col gap-4 items-center font-medium md:flex-row md:justify-end md:gap-8 md:px-4 md:text-sm"
         >
           <li><a href="/">Home</a></li>
           <li><a href="/profile/">My Profile</a></li>
-          <li><a href="/auth/login/">Login</a></li>
-          <li><a href="/auth/register/">Register</a></li>
+          <li><a href="/auth/login/">Log in</a></li>
+          <!-- <li><a href="/auth/register/">Register</a></li> -->
           <li><a href="/post/create/">Create</a></li>
           <button class="btn-secondary logout-btn">Log out</button>
         </ul>
       </nav>
-
+      <!-- Hamburger menu icon -->
       <div class="hamburger hover:cursor-pointer self-center md:hidden">
-        <div class="bar-one h-[3px] w-6 bg-black my-1 rounded-full"></div>
-        <div class="bar-two h-[3px] w-6 bg-black my-1 rounded-full"></div>
-        <div class="bar-three h-[3px] w-6 bg-black my-1 rounded-full"></div>
+        <div class="bar bar-one"></div>
+        <div class="bar bar-two"></div>
+        <div class="bar bar-three"></div>
       </div>
     </header>
     <main>
-      <h1>Home</h1>
-      <h2>All posts</h2>
-      <ul id="post-list"></ul>
-      <div id="pagination">
-        <button id="prev">Previous</button>
-        <button id="next">Next</button>
+      <div class="relative">
+        <h1 class="absolute z-10 top-[70px] left-[30px] text-3xl font-semibold">
+          Home
+        </h1>
+        <div
+          class="custom-shape-divider-top-1730707076 absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180"
+        >
+          <svg
+            class="relative block [transform:rotateY(180deg)] w-[calc(164%+1.3px)] h-[147px] md:w-[calc(139%+1.3px)] md:h-[232px]"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+              class="shape-fill fill-main"
+            ></path>
+          </svg>
+        </div>
+        <div
+          class="custom-shape-divider-top-1730707076 absolute top-[12px] left-0 w-full overflow-hidden leading-none rotate-180"
+        >
+          <svg
+            class="relative block [transform:rotateY(180deg)] w-[calc(164%+1.3px)] h-[157px] md:w-[calc(139%+1.3px)] md:h-[252px]"
+            data-name="Layer 2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+              class="shape-fill fill-[#ace3d665]"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <div class="pt-[170px] md:pt-[250px]">
+        <h2 class="text-center py-6 text-lg font-semibold">All posts</h2>
+        <ul id="post-list"></ul>
+        <div id="pagination">
+          <button id="prev">Previous</button>
+          <button id="next">Next</button>
+        </div>
       </div>
     </main>
     <footer></footer>
