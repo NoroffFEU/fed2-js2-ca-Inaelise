@@ -26,6 +26,7 @@ export async function viewPosts() {
         "border-2",
         "border-main",
         "shadow-box",
+        "break-words",
         "md:w-[300px]",
         "md:transition-all",
         "md:duration-500",
