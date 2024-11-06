@@ -16,6 +16,7 @@ export default {
       },
       boxShadow: {
         box: "5px 5px 0px 0px rgb(172, 227, 214)",
+        input: "3px 3px 0px 0px rgb(172, 227, 214)",
       },
       backgroundImage: {
         footer: "url('/images/stacked-waves-haikei.svg')",
