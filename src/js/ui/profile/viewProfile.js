@@ -14,6 +14,7 @@ export async function viewProfile() {
 
     const img = document.createElement("img");
     img.src = profile.avatar.url;
+    img.classList.add("rounded-full", "w-[200px]");
 
     const userName = document.createElement("h2");
     userName.textContent = profile.name;
@@ -21,15 +22,50 @@ export async function viewProfile() {
     const bio = document.createElement("p");
     bio.textContent = profile.bio;
 
+    const otherInfo = document.createElement("div");
+    otherInfo.classList.add("flex");
+
+    const postCountDiv = document.createElement("div");
+    postCountDiv.classList.add("flex", "flex-col");
+
     const postCount = document.createElement("p");
-    postCount.textContent = `Total posts: ${profile._count.posts}`;
+    postCount.textContent = profile._count.posts;
+
+    const postCountText = document.createElement("p");
+    postCountText.textContent = "Posts";
+
+    const followerCountDiv = document.createElement("div");
+    followerCountDiv.classList.add("flex", "flex-col");
+
+    const followerCount = document.createElement("p");
+    followerCount.textContent = profile._count.followers;
+
+    const followerCountText = document.createElement("p");
+    followerCountText.textContent = "Followers";
+
+    const followingCountDiv = document.createElement("div");
+    followingCountDiv.classList.add("flex", "flex-col");
+
+    const followingCount = document.createElement("p");
+    followingCount.textContent = profile._count.following;
+
+    const followingCountText = document.createElement("p");
+    followingCountText.textContent = "Following";
 
     const editBtn = document.createElement("a");
     editBtn.href = "/profile/edit/";
     editBtn.textContent = "Update profile";
     editBtn.classList.add("edit-btn");
 
-    profileContainer.append(img, userName, bio, postCount, editBtn);
+    followingCountDiv.append(followingCount, followingCountText);
+
+    followerCountDiv.append(followerCount, followerCountText);
+
+    postCountDiv.append(postCount, postCountText);
+
+    otherInfo.append(postCountDiv, followerCountDiv, followingCountDiv);
+
+    profileContainer.append(img, userName, bio, otherInfo, editBtn);
 
     return profileContainer;
   } catch (error) {
