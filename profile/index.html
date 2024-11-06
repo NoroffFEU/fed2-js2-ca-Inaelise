@@ -7,9 +7,39 @@
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <header></header>
-    <main>
+  <body class="font-body pt-[55px]">
+    <header
+      class="bg-main flex justify-between p-3 fixed w-full top-0 drop-shadow z-20"
+    >
+      <img
+        class="w-[100px] md:w-[120px]"
+        src="/images/noroff-logo.png"
+        alt="Noroff Logo"
+      />
+      <nav
+        class="fixed top-[55px] left-0 bg-main w-full pt-3 pb-6 px-0 -translate-x-full transition-all duration-500 ease-in-out md:translate-x-0 md:transition-none md:top-0 md:bg-transparent md:py-5"
+      >
+        <ul
+          class="flex flex-col gap-4 items-center font-medium md:flex-row md:justify-end md:gap-8 md:px-4 md:text-sm"
+        >
+          <li>
+            <a class="hover" href="/">Home</a>
+          </li>
+          <li><a class="hover" href="/profile/">My Profile</a></li>
+          <li><a class="hover" href="/auth/login/">Log in</a></li>
+          <!-- <li><a href="/auth/register/">Register</a></li> -->
+          <li><a class="hover" href="/post/create/">Create</a></li>
+          <button class="btn btn-secondary logout-btn">Log out</button>
+        </ul>
+      </nav>
+      <!-- Hamburger menu icon -->
+      <div class="hamburger hover:cursor-pointer self-center md:hidden">
+        <div class="bar bar-one"></div>
+        <div class="bar bar-two"></div>
+        <div class="bar bar-three"></div>
+      </div>
+    </header>
+    <main class="bg-bg w-full aspect-square bg-no-repeat bg-center bg-cover">
       <h1>Profile</h1>
       <div id="profile-container"></div>
     </main>
