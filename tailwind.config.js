@@ -21,6 +21,7 @@ export default {
       },
       backgroundImage: {
         footer: "url('/images/stacked-waves-haikei.svg')",
+        background: "url('/images/stacked-waves-2.svg')",
       },
     },
   },
