@@ -23,7 +23,13 @@ export async function viewProfile() {
     bio.textContent = profile.bio;
 
     const otherInfo = document.createElement("div");
-    otherInfo.classList.add("flex", "gap-8", "text-center", "py-8");
+    otherInfo.classList.add(
+      "flex",
+      "gap-8",
+      "text-center",
+      "pt-8",
+      "pb-[50px]"
+    );
 
     const postCountDiv = document.createElement("div");
     postCountDiv.classList.add("flex", "flex-col");
