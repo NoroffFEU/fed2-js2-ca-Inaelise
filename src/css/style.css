@@ -17,4 +17,7 @@
   .hover {
     @apply transition-all duration-300 ease-in-out hover:text-white;
   }
+  .input {
+    @apply border border-main rounded shadow-input p-2 w-[250px];
+  }
 }
