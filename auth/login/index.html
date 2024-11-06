@@ -7,7 +7,8 @@
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
+
+  <body class="font-body pt-[55px] bg-white">
     <header
       class="bg-main flex justify-between p-3 fixed w-full top-0 drop-shadow z-20"
     >
@@ -40,21 +41,79 @@
       </div>
     </header>
     <main>
-      <h1>Login</h1>
-      <form name="login">
-        <div>
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" required />
+      <div class="relative">
+        <h1
+          class="absolute z-10 top-[70px] left-[30px] text-3xl font-semibold sm:left-[100px] md:left-[240px] md:top-[150px] md:text-4xl lg:left-[350px] xl:left[500px] 2xl:left-[550px]"
+        >
+          Log in
+        </h1>
+        <div
+          class="custom-shape-divider-top-1730707076 absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180"
+        >
+          <svg
+            class="relative block [transform:rotateY(180deg)] w-[calc(164%+1.3px)] h-[147px] md:w-[calc(139%+1.3px)] md:h-[232px]"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+              class="shape-fill fill-main"
+            ></path>
+          </svg>
         </div>
-
-        <div>
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" required />
+        <div
+          class="custom-shape-divider-top-1730707076 absolute top-[12px] left-0 w-full overflow-hidden leading-none rotate-180"
+        >
+          <svg
+            class="relative block [transform:rotateY(180deg)] w-[calc(164%+1.3px)] h-[157px] md:w-[calc(139%+1.3px)] md:h-[252px]"
+            data-name="Layer 2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+              class="shape-fill fill-[#ace3d665]"
+            ></path>
+          </svg>
         </div>
+      </div>
+      <div class="pt-[170px] md:pt-[250px]">
+        <form name="login" class="flex flex-col gap-6 items-center py-[50px]">
+          <div class="flex flex-col gap-1">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              class="input"
+              required
+            />
+          </div>
 
-        <a class="reg-link" href="/auth/register/">Register</a>
-        <button>Login</button>
-      </form>
+          <div class="flex flex-col gap-1">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="input"
+              required
+            />
+          </div>
+          <button>Login</button>
+          <div class="text-center text-sm">
+            <p>Don't have an account?</p>
+            <a
+              class="font-bold text-secondary inline-block duration-300 hover:scale-105 underline xl:no-underline xl:hover:underline"
+              href="/auth/register/"
+              >Sign up here</a
+            >
+          </div>
+        </form>
+      </div>
     </main>
     <footer
       class="bg-footer w-full aspect-square bg-no-repeat bg-center bg-cover max-h-[300px] flex justify-center items-center"
