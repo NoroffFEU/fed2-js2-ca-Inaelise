@@ -7,22 +7,59 @@
     <title>Noroff FED2 JS2 CA</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-
   <body>
-    <h1>Login</h1>
-    <form name="login">
-      <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required />
+    <header
+      class="bg-main flex justify-between p-3 fixed w-full top-0 drop-shadow z-20"
+    >
+      <img
+        class="w-[100px] md:w-[120px]"
+        src="/images/noroff-logo.png"
+        alt="Noroff Logo"
+      />
+      <nav
+        class="fixed top-[55px] left-0 bg-main w-full pt-3 pb-6 px-0 -translate-x-full transition-all duration-300 ease-in-out md:translate-x-0 md:transition-none md:top-0 md:bg-transparent md:py-5"
+      >
+        <ul
+          class="flex flex-col gap-4 items-center font-medium md:flex-row md:justify-end md:gap-8 md:px-4 md:text-sm"
+        >
+          <li>
+            <a class="hover" href="/">Home</a>
+          </li>
+          <li><a class="hover" href="/profile/">My Profile</a></li>
+          <li><a class="hover" href="/auth/login/">Log in</a></li>
+          <!-- <li><a href="/auth/register/">Register</a></li> -->
+          <li><a class="hover" href="/post/create/">Create</a></li>
+          <button class="btn btn-secondary logout-btn">Log out</button>
+        </ul>
+      </nav>
+      <!-- Hamburger menu icon -->
+      <div class="hamburger hover:cursor-pointer self-center md:hidden">
+        <div class="bar bar-one"></div>
+        <div class="bar bar-two"></div>
+        <div class="bar bar-three"></div>
       </div>
+    </header>
+    <main>
+      <h1>Login</h1>
+      <form name="login">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required />
+        </div>
 
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required />
-      </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required />
+        </div>
 
-      <a class="reg-link" href="/auth/register/">Register</a>
-      <button>Login</button>
-    </form>
+        <a class="reg-link" href="/auth/register/">Register</a>
+        <button>Login</button>
+      </form>
+    </main>
+    <footer
+      class="bg-footer w-full aspect-square bg-no-repeat bg-center bg-cover max-h-[300px] flex justify-center items-center"
+    >
+      <p class="text-sm">Social Media App © 2024</p>
+    </footer>
   </body>
 </html>
