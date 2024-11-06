@@ -23,7 +23,7 @@ export async function viewProfile() {
     bio.textContent = profile.bio;
 
     const otherInfo = document.createElement("div");
-    otherInfo.classList.add("flex");
+    otherInfo.classList.add("flex", "gap-8", "text-center", "py-8");
 
     const postCountDiv = document.createElement("div");
     postCountDiv.classList.add("flex", "flex-col");
@@ -54,7 +54,7 @@ export async function viewProfile() {
 
     const editBtn = document.createElement("a");
     editBtn.href = "/profile/edit/";
-    editBtn.textContent = "Update profile";
+    editBtn.textContent = "Edit";
     editBtn.classList.add("edit-btn");
 
     followingCountDiv.append(followingCount, followingCountText);
