@@ -42,9 +42,12 @@
     </header>
     <main>
       <h1>Register</h1>
-      <div>
-        <form name="register">
-          <div>
+      <div class="pt-[170px] md:pt-[250px]">
+        <form
+          name="register"
+          class="flex flex-col gap-6 items-center py-[50px]"
+        >
+          <div class="flex flex-col gap-1">
             <label for="name" class="font-semibold">Name</label>
             <input
               id="name"
@@ -57,7 +60,7 @@
             />
           </div>
 
-          <div>
+          <div class="flex flex-col gap-1">
             <label for="email" class="font-semibold">Email</label>
             <input
               id="email"
@@ -69,7 +72,7 @@
             />
           </div>
 
-          <div>
+          <div class="flex flex-col gap-1">
             <label for="password" class="font-semibold">Password</label>
             <input
               type="password"
@@ -80,8 +83,15 @@
             />
           </div>
 
-          <a class="login-link" href="/auth/login/">Login</a>
-          <button>Register</button>
+          <button class="btn btn-primary">Sign up</button>
+          <div class="text-center text-sm">
+            <p>Already have an account?</p>
+            <a
+              class="font-bold text-secondary inline-block duration-300 hover:scale-105 underline xl:no-underline xl:hover:underline"
+              href="/auth/login/"
+              >Log in</a
+            >
+          </div>
         </form>
       </div>
     </main>
