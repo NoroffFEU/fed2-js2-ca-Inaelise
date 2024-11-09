@@ -40,6 +40,7 @@ export async function viewPost() {
       const img = document.createElement("img");
       img.src = post.media.url;
       img.alt = post.media.alt || "Post image";
+      img.classList.add("sm:rounded-lg");
       postContainer.append(author, img);
     }
 
@@ -82,7 +83,7 @@ export async function viewPost() {
 
     const tags = document.createElement("p");
     tags.textContent = post.tags.join(", ");
-    tags.classList.add("text-xs", "text-faded");
+    tags.classList.add("text-xs", "text-[#000000cc]");
 
     const btnContainer = document.createElement("div");
     btnContainer.classList.add(
