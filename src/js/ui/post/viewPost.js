@@ -56,10 +56,13 @@ export async function viewPost() {
     const likeBtn = document.createElement("button");
     likeBtn.id = "like-btn";
     likeBtn.innerHTML = "<i class='fa-solid fa-heart fa-xl'></i>";
+    likeBtn.title = "Click to like/unlike";
     likeBtn.classList.add(
       "text-secondary",
       "hover:text-white",
-      "hover:drop-shadow"
+      "transition-all",
+      "duration-300",
+      "ease-in-out"
     );
     likeBtn.addEventListener("click", async () => {
       try {
@@ -110,6 +113,7 @@ export async function viewPost() {
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.dataset.postId = post.id;
+    deleteBtn.title = "Click to delete post";
     deleteBtn.classList.add(
       "delete-btn",
       "btn",
@@ -128,6 +132,7 @@ export async function viewPost() {
     const editBtn = document.createElement("a");
     editBtn.href = `/post/edit/?id=${postId}`;
     editBtn.textContent = "Edit";
+    editBtn.title = "Click to edit post";
     editBtn.classList.add("edit-btn", "btn", "primary");
 
     textContainer.append(title, body, tags);
