@@ -28,7 +28,12 @@ export async function viewPost() {
     const userAvatar = document.createElement("img");
     userAvatar.src = post.author.avatar.url;
     userAvatar.alt = post.author.avatar.alt || "User avatar";
-    userAvatar.classList.add("w-[35px]", "rounded-full");
+    userAvatar.classList.add(
+      "w-[35px]",
+      "h-[35px]",
+      "rounded-full",
+      "object-cover"
+    );
 
     const userName = document.createElement("p");
     userName.textContent = post.author.name;
