@@ -85,6 +85,7 @@ export async function viewProfile() {
     editBtn.href = "/profile/edit/";
     editBtn.textContent = "Edit";
     editBtn.classList.add("btn", "primary");
+    editBtn.title = "Go to edit page";
 
     followingCountDiv.append(followingCount, followingCountText);
 

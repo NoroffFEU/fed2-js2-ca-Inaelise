@@ -24,17 +24,32 @@
           class="flex flex-col gap-4 items-center font-medium md:flex-row md:justify-end md:gap-8 md:px-4 md:text-sm"
         >
           <li>
-            <a class="hover" href="/">Home</a>
+            <a class="hover" title="Go to home" href="/">Home</a>
           </li>
-          <li><a class="hover" href="/profile/">My Profile</a></li>
-          <li><a class="hover" href="/auth/login/">Log in</a></li>
+          <li>
+            <a class="hover" title="Go to profile" href="/profile/"
+              >My Profile</a
+            >
+          </li>
+          <li>
+            <a class="hover" title="Go to log in" href="/auth/login/">Log in</a>
+          </li>
           <!-- <li><a href="/auth/register/">Register</a></li> -->
-          <li><a class="hover" href="/post/create/">Create</a></li>
-          <button class="btn secondary logout-btn">Log out</button>
+          <li>
+            <a class="hover" title="Go to create" href="/post/create/"
+              >Create</a
+            >
+          </li>
+          <button class="btn secondary logout-btn" title="Click to log out">
+            Log out
+          </button>
         </ul>
       </nav>
       <!-- Hamburger menu icon -->
-      <div class="hamburger hover:cursor-pointer self-center md:hidden">
+      <div
+        class="hamburger hover:cursor-pointer self-center md:hidden"
+        title="Click to open/close menu"
+      >
         <div class="bar bar-one"></div>
         <div class="bar bar-two"></div>
         <div class="bar bar-three"></div>
@@ -124,11 +139,12 @@
             />
           </div>
 
-          <button class="btn primary">Sign up</button>
+          <button class="btn primary" title="Click to sign up">Sign up</button>
           <div class="text-center text-sm">
             <p>Already have an account?</p>
             <a
               class="font-bold text-secondary inline-block duration-300 hover:scale-105 underline xl:no-underline xl:hover:underline"
+              title="Go to log in page"
               href="/auth/login/"
               >Log in</a
             >

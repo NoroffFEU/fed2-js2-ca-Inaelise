@@ -19,6 +19,7 @@ export async function viewPosts() {
 
       const link = document.createElement("a");
       link.href = `/post/?id=${post.id}`;
+      link.title = "Go to post";
 
       const postContainer = document.createElement("div");
       postContainer.classList.add(

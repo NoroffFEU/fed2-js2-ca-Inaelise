@@ -23,17 +23,32 @@
           class="flex flex-col gap-4 items-center font-medium md:flex-row md:justify-end md:gap-8 md:px-4 md:text-sm"
         >
           <li>
-            <a class="hover" href="/">Home</a>
+            <a class="hover" title="Go to home" href="/">Home</a>
           </li>
-          <li><a class="hover" href="/profile/">My Profile</a></li>
-          <li><a class="hover" href="/auth/login/">Log in</a></li>
+          <li>
+            <a class="hover" title="Go to profile" href="/profile/"
+              >My Profile</a
+            >
+          </li>
+          <li>
+            <a class="hover" title="Go to log in" href="/auth/login/">Log in</a>
+          </li>
           <!-- <li><a href="/auth/register/">Register</a></li> -->
-          <li><a class="hover" href="/post/create/">Create</a></li>
-          <button class="btn secondary logout-btn">Log out</button>
+          <li>
+            <a class="hover" title="Go to create" href="/post/create/"
+              >Create</a
+            >
+          </li>
+          <button class="btn secondary logout-btn" title="Click to log out">
+            Log out
+          </button>
         </ul>
       </nav>
       <!-- Hamburger menu icon -->
-      <div class="hamburger hover:cursor-pointer self-center md:hidden">
+      <div
+        class="hamburger hover:cursor-pointer self-center md:hidden"
+        title="Click to open/close menu"
+      >
         <div class="bar bar-one"></div>
         <div class="bar bar-two"></div>
         <div class="bar bar-three"></div>
@@ -88,8 +103,20 @@
           class="flex flex-col gap-10 items-center md:flex-row md:flex-wrap md:max-w-[1400px] md:m-auto md:justify-center"
         ></ul>
         <div id="pagination" class="pb-6 pt-8 flex gap-10 justify-center">
-          <button id="prev" class="btn secondary w-[60px]">Prev</button>
-          <button id="next" class="btn secondary w-[60px]">Next</button>
+          <button
+            id="prev"
+            class="btn secondary w-[60px]"
+            title="Go to previous page"
+          >
+            Prev
+          </button>
+          <button
+            id="next"
+            class="btn secondary w-[60px]"
+            title="Go to next page"
+          >
+            Next
+          </button>
         </div>
       </div>
     </main>
