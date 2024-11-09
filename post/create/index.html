@@ -6,33 +6,41 @@
     <title>Create post</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <h1>Create Post</h1>
-    <form name="createPost">
-      <div>
-        <label for="url">Image URL</label>
-        <input
-          name="url"
-          id="url"
-          type="url"
-          placeholder="https://example.com"
-          pattern="https://.*"
-          required
-        />
-      </div>
-      <div>
-        <label for="title">Title</label>
-        <input name="title" id="title" type="text" required />
-      </div>
-      <div>
-        <label for="body">Content</label>
-        <textarea name="body" id="body"></textarea>
-      </div>
-      <div>
-        <label for="tags">Tags</label>
-        <input type="text" name="tags" id="tags" />
-      </div>
-      <button>Create Post</button>
-    </form>
+  <body class="font-body pt-[55px] bg-white">
+    <header></header>
+
+    <main>
+      <h1>Create Post</h1>
+      <form name="createPost">
+        <div>
+          <label for="url">Image URL</label>
+          <input
+            name="url"
+            id="url"
+            type="url"
+            placeholder="https://example.com"
+            pattern="https://.*"
+            required
+          />
+        </div>
+        <div>
+          <label for="title">Title</label>
+          <input name="title" id="title" type="text" required />
+        </div>
+        <div>
+          <label for="body">Content</label>
+          <textarea name="body" id="body"></textarea>
+        </div>
+        <div>
+          <label for="tags">Tags</label>
+          <input type="text" name="tags" id="tags" />
+        </div>
+        <button>Create Post</button>
+      </form>
+    </main>
+
+    <footer class="bg-footer">
+      <p class="text-sm">Copyright © 2024 My Social Media</p>
+    </footer>
   </body>
 </html>
