@@ -45,7 +45,13 @@ export async function viewPost() {
     }
 
     const likeContainer = document.createElement("div");
-    likeContainer.classList.add("flex", "gap-1", "p-2", "items-center");
+    likeContainer.classList.add(
+      "flex",
+      "gap-1",
+      "p-2",
+      "items-center",
+      "sm:px-0"
+    );
 
     const likeBtn = document.createElement("button");
     likeBtn.id = "like-btn";
@@ -71,7 +77,14 @@ export async function viewPost() {
     likes.classList.add("font-bold", "text-sm");
 
     const textContainer = document.createElement("div");
-    textContainer.classList.add("py-2", "px-3", "flex", "flex-col", "gap-4");
+    textContainer.classList.add(
+      "py-2",
+      "px-3",
+      "flex",
+      "flex-col",
+      "gap-4",
+      "sm:px-0"
+    );
 
     const title = document.createElement("h2");
     title.textContent = post.title;
