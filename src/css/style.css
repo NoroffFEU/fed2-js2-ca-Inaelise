@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  footer {
+    @apply w-full aspect-square bg-no-repeat bg-center bg-cover max-h-[300px] flex justify-center items-center;
+  }
+}
+
 @layer components {
   .btn {
     @apply rounded-lg font-medium text-sm text-center;
