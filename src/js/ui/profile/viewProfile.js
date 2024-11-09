@@ -84,7 +84,7 @@ export async function viewProfile() {
     const editBtn = document.createElement("a");
     editBtn.href = "/profile/edit/";
     editBtn.textContent = "Edit";
-    editBtn.classList.add("btn", "btn-primary");
+    editBtn.classList.add("btn", "primary");
 
     followingCountDiv.append(followingCount, followingCountText);
 
