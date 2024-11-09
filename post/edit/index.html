@@ -60,34 +60,41 @@
       class="bg-background w-full aspect-square bg-no-repeat bg-center bg-cover md:max-h-[900px]"
     >
       <h1
-        class="text-3xl font-semibold text-center py-6 md:text-4xl md:py-[50px] md:pb-[30px]"
+        class="text-3xl font-semibold text-center py-6 md:text-4xl md:pt-[100px] md:pb-[50px]"
       >
         Edit Post
       </h1>
-      <form name="editPost" id="update-post">
-        <div>
-          <label for="url">Image URL</label>
+      <form
+        name="editPost"
+        id="update-post"
+        class="flex flex-col gap-6 items-center py-[50px]"
+      >
+        <div class="flex flex-col gap-1">
+          <label for="url" class="font-semibold">Image URL</label>
           <input
             name="url"
             id="url"
             type="url"
+            class="input"
             placeholder="https://example.com"
             pattern="https://.*"
           />
         </div>
-        <div>
-          <label for="title">Title</label>
-          <input name="title" id="title" type="text" />
+        <div class="flex flex-col gap-1">
+          <label for="title" class="font-semibold">Title</label>
+          <input name="title" id="title" type="text" class="input" />
         </div>
-        <div>
-          <label for="body">Content</label>
-          <textarea name="body" id="body"></textarea>
+        <div class="flex flex-col gap-1">
+          <label for="body" class="font-semibold">Content</label>
+          <textarea name="body" id="body" class="input h-[150px]"></textarea>
         </div>
-        <div>
-          <label for="tags">Tags</label>
-          <input type="text" name="tags" id="tags" />
+        <div class="flex flex-col gap-1">
+          <label for="tags" class="font-semibold">Tags</label>
+          <input type="text" name="tags" id="tags" class="input" />
         </div>
-        <button>Update</button>
+        <button class="btn primary mt-[50px]" title="Click to update profile">
+          Update
+        </button>
       </form>
     </main>
 
