@@ -7,7 +7,7 @@ import { headers as getHeaders } from "../headers";
  * @returns {Object} the post data.
  */
 export async function readPost(id) {
-  const url = `${API_SOCIAL_POSTS}/${id}`;
+  const url = `${API_SOCIAL_POSTS}/${id}?_author=true`;
 
   const token = localStorage.getItem("token");
 
