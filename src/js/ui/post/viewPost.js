@@ -54,6 +54,18 @@ export async function viewPost() {
         "lg:h-[420px]"
       );
       postContainer.append(author, img);
+    } else {
+      const noImage = document.createElement("img");
+      noImage.src = "/images/default-img.png";
+      noImage.classList.add(
+        "bg-white",
+        "h-[350px]",
+        "object-cover",
+        "w-full",
+        "sm:rounded-lg",
+        "lg:h-[420px]"
+      );
+      postContainer.append(author, noImage);
     }
 
     const likeContainer = document.createElement("div");
