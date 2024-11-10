@@ -80,6 +80,9 @@ export async function viewPosts() {
 function updatePaginationButtons(postCount) {
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
+  const pageCount = document.getElementById("current-page");
+
+  pageCount.textContent = currentPage;
 
   prev.disabled = currentPage === 1;
   next.disabled = postCount < postsPerPage;

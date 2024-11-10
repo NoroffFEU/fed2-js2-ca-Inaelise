@@ -102,7 +102,10 @@
           id="post-list"
           class="flex flex-col gap-10 items-center md:flex-row md:flex-wrap md:max-w-[1400px] md:m-auto md:justify-center"
         ></ul>
-        <div id="pagination" class="pb-6 pt-8 flex gap-10 justify-center">
+        <div
+          id="pagination"
+          class="pb-6 pt-8 flex gap-10 justify-center items-center"
+        >
           <button
             id="prev"
             class="btn secondary w-[60px]"
@@ -110,6 +113,10 @@
           >
             Prev
           </button>
+          <span
+            id="current-page"
+            class="text-sm font-bold text-secondary"
+          ></span>
           <button
             id="next"
             class="btn secondary w-[60px]"
