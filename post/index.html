@@ -27,20 +27,38 @@
           class="flex flex-col gap-4 items-center font-medium md:flex-row md:justify-end md:gap-8 md:px-4 md:text-sm"
         >
           <li>
-            <a class="hover" title="Go to home" href="/">Home</a>
+            <a id="home-nav" class="hover" title="Go to home" href="/">Home</a>
           </li>
           <li>
-            <a class="hover" title="Go to profile" href="/profile/"
+            <a
+              id="profile-nav"
+              class="hover"
+              title="Go to profile"
+              href="/profile/"
               >My Profile</a
             >
           </li>
           <li>
-            <a class="hover" title="Go to log in" href="/auth/login/">Log in</a>
-          </li>
-          <!-- <li><a href="/auth/register/">Register</a></li> -->
-          <li>
-            <a class="hover" title="Go to create" href="/post/create/"
+            <a
+              id="create-nav"
+              class="hover"
+              title="Go to create"
+              href="/post/create/"
               >Create</a
+            >
+          </li>
+          <li>
+            <a
+              id="login-nav"
+              class="hover"
+              title="Go to log in"
+              href="/auth/login/"
+              >Log in</a
+            >
+          </li>
+          <li>
+            <a id="signup-nav" title="Go to register" href="/auth/register/"
+              >Sign up</a
             >
           </li>
           <button class="btn secondary logout-btn" title="Click to log out">
