@@ -2,6 +2,7 @@ import { readPost } from "../../api/post/read";
 import { activePostId } from "../../utilities/activePostId";
 import { onDeletePost } from "./delete";
 import { likePost } from "../../api/post/reaction";
+import { activeUser } from "../../utilities/activeUser";
 
 /**
  * This function will display the data of a single post on the page.
@@ -124,6 +125,11 @@ export async function viewPost() {
       "py-8"
     );
 
+    const user = activeUser();
+    if (user.name !== post.author.name) {
+      btnContainer.classList.add("hidden");
+    }
+
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.dataset.postId = post.id;
@@ -134,6 +140,7 @@ export async function viewPost() {
       "border",
       "p-2",
       "border-faded",
+      "bg-main",
       "w-[100px]",
       "hover:shadow-spread",
       "hover:scale-105",
