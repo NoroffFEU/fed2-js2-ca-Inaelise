@@ -2,29 +2,127 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/images/site.webmanifest" />
+    <title>Edit profile</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <h1>Edit Profile</h1>
-    <form name="updateProfile">
-      <div>
-        <label for="url">Avatar Image URL</label>
-        <input
-          name="url"
-          id="url"
-          type="url"
-          placeholder="https://example.com"
-          pattern="https://.*"
-        />
+  <body class="font-body pt-[55px]">
+    <header
+      class="bg-main flex justify-between p-3 fixed w-full top-0 drop-shadow z-20"
+    >
+      <img
+        class="w-[100px] md:w-[120px]"
+        src="/images/noroff-logo.png"
+        alt="Noroff Logo"
+      />
+      <nav
+        class="fixed top-[55px] left-0 bg-main w-full pt-3 pb-6 px-0 -translate-x-full transition-all duration-500 ease-in-out md:translate-x-0 md:transition-none md:top-0 md:bg-transparent md:py-5"
+      >
+        <ul
+          class="flex flex-col gap-4 items-center font-medium md:flex-row md:justify-end md:gap-8 md:px-4 md:text-sm"
+        >
+          <li>
+            <a id="home-nav" class="hover" title="Go to home" href="/">Home</a>
+          </li>
+          <li>
+            <a
+              id="profile-nav"
+              class="hover"
+              title="Go to profile"
+              href="/profile/"
+              >My Profile</a
+            >
+          </li>
+          <li>
+            <a
+              id="create-nav"
+              class="hover"
+              title="Go to create"
+              href="/post/create/"
+              >Create</a
+            >
+          </li>
+          <li>
+            <a
+              id="login-nav"
+              class="hover"
+              title="Go to log in"
+              href="/auth/login/"
+              >Log in</a
+            >
+          </li>
+          <li>
+            <a id="signup-nav" title="Go to register" href="/auth/register/"
+              >Sign up</a
+            >
+          </li>
+          <button class="btn secondary logout-btn" title="Click to log out">
+            Log out
+          </button>
+        </ul>
+      </nav>
+      <!-- Hamburger menu icon -->
+      <div
+        class="hamburger hover:cursor-pointer self-center md:hidden"
+        title="Click to open/close menu"
+      >
+        <div class="bar bar-one"></div>
+        <div class="bar bar-two"></div>
+        <div class="bar bar-three"></div>
       </div>
-      <div>
-        <label for="bio">Bio</label>
-        <input name="bio" id="bio" type="text" />
-      </div>
-      <button>Update</button>
-    </form>
+    </header>
+    <main
+      class="bg-background w-full aspect-square bg-no-repeat bg-center bg-cover min-h-[500px] md:max-h-[900px]"
+    >
+      <h1
+        class="text-3xl font-semibold text-center py-6 md:text-4xl md:pt-[100px] md:pb-[50px]"
+      >
+        Edit Profile
+      </h1>
+      <form
+        name="updateProfile"
+        class="flex flex-col gap-6 items-center py-[50px]"
+      >
+        <div class="flex flex-col gap-1">
+          <label for="url" class="font-semibold">Avatar Image URL</label>
+          <input
+            name="url"
+            id="url"
+            type="url"
+            class="input"
+            placeholder="https://example.com"
+            pattern="https://.*"
+          />
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="bio" class="font-semibold">Bio</label>
+          <input name="bio" id="bio" type="text" class="input" />
+        </div>
+        <button class="btn primary mt-[50px]" title="Click to update profile">
+          Update
+        </button>
+      </form>
+    </main>
+    <footer class="bg-main">
+      <p class="text-sm">Copyright © 2024 My Social Media</p>
+    </footer>
   </body>
 </html>

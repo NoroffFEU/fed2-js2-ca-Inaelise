@@ -2,6 +2,7 @@ import { readPost } from "../../api/post/read";
 import { activePostId } from "../../utilities/activePostId";
 import { onDeletePost } from "./delete";
 import { likePost } from "../../api/post/reaction";
+import { activeUser } from "../../utilities/activeUser";
 
 /**
  * This function will display the data of a single post on the page.
@@ -15,55 +16,162 @@ export async function viewPost() {
 
     const postContainer = document.getElementById("post-container");
 
+    const author = document.createElement("div");
+    author.classList.add(
+      "flex",
+      "flex-row",
+      "items-center",
+      "justify-center",
+      "gap-3",
+      "py-4"
+    );
+
+    const userAvatar = document.createElement("img");
+    userAvatar.src = post.author.avatar.url;
+    userAvatar.alt = post.author.avatar.alt || "User avatar";
+    userAvatar.classList.add(
+      "w-[35px]",
+      "h-[35px]",
+      "rounded-full",
+      "object-cover"
+    );
+
+    const userName = document.createElement("p");
+    userName.textContent = post.author.name;
+    userName.classList.add("text-xs", "font-semibold");
+
+    author.append(userAvatar, userName);
+
     if (post.media && post.media.url) {
       const img = document.createElement("img");
       img.src = post.media.url;
       img.alt = post.media.alt || "Post image";
-      postContainer.appendChild(img);
+      img.classList.add(
+        "h-[350px]",
+        "object-cover",
+        "w-full",
+        "sm:rounded-lg",
+        "lg:h-[420px]"
+      );
+      postContainer.append(author, img);
+    } else {
+      const noImage = document.createElement("img");
+      noImage.src = "/images/default-img.png";
+      noImage.classList.add(
+        "bg-white",
+        "h-[350px]",
+        "object-cover",
+        "w-full",
+        "sm:rounded-lg",
+        "lg:h-[420px]"
+      );
+      postContainer.append(author, noImage);
     }
 
-    const title = document.createElement("h2");
-    title.textContent = post.title;
-
-    const body = document.createElement("p");
-    body.textContent = post.body;
-
-    const tags = document.createElement("p");
-    tags.textContent = `Tags: ${post.tags.join(", ")}`;
-
-    const likes = document.createElement("p");
-    likes.id = "like-count";
-    likes.textContent = `Likes: ${post._count.reactions}`;
+    const likeContainer = document.createElement("div");
+    likeContainer.classList.add(
+      "flex",
+      "gap-1",
+      "p-2",
+      "items-center",
+      "sm:px-0"
+    );
 
     const likeBtn = document.createElement("button");
     likeBtn.id = "like-btn";
-    likeBtn.textContent = "👍";
+    likeBtn.innerHTML = "<i class='fa-solid fa-heart fa-xl'></i>";
+    likeBtn.title = "Click to like/unlike";
+    likeBtn.classList.add(
+      "text-secondary",
+      "hover:text-white",
+      "transition-all",
+      "duration-300",
+      "ease-in-out"
+    );
     likeBtn.addEventListener("click", async () => {
       try {
         await likePost(postId);
         const updatedPost = await readPost(postId);
-        likes.textContent = `Likes: ${updatedPost._count.reactions}`;
+        likes.textContent = updatedPost._count.reactions;
       } catch (error) {
         alert(`Error: ${error.message}`);
       }
     });
 
-    const btnContainer = document.createElement("div");
-    btnContainer.classList.add("btn-container");
+    const likes = document.createElement("p");
+    likes.id = "like-count";
+    likes.textContent = post._count.reactions;
+    likes.classList.add("font-bold", "text-sm");
 
-    const editBtn = document.createElement("a");
-    editBtn.href = `/post/edit/?id=${postId}`;
-    editBtn.textContent = "Edit post";
-    editBtn.classList.add("edit-btn");
+    const textContainer = document.createElement("div");
+    textContainer.classList.add(
+      "py-2",
+      "px-3",
+      "flex",
+      "flex-col",
+      "gap-4",
+      "break-words",
+      "text-wrap",
+      "max-w-[500px]",
+      "sm:px-0"
+    );
+
+    const title = document.createElement("h2");
+    title.textContent = post.title;
+    title.classList.add("font-semibold");
+
+    const body = document.createElement("p");
+    body.textContent = post.body;
+    body.classList.add("text-sm");
+
+    const tags = document.createElement("p");
+    tags.textContent = post.tags.join(", ");
+    tags.classList.add("text-xs", "text-[#000000cc]");
+
+    const btnContainer = document.createElement("div");
+    btnContainer.classList.add(
+      "btn-container",
+      "flex",
+      "gap-10",
+      "justify-center",
+      "py-8"
+    );
+
+    const user = activeUser();
+    if (user.name !== post.author.name) {
+      btnContainer.classList.add("hidden");
+    }
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.dataset.postId = post.id;
-    deleteBtn.classList.add("delete-btn");
+    deleteBtn.title = "Click to delete post";
+    deleteBtn.classList.add(
+      "delete-btn",
+      "btn",
+      "border",
+      "p-2",
+      "border-faded",
+      "bg-main",
+      "w-[100px]",
+      "hover:shadow-spread",
+      "hover:scale-105",
+      "transition-all",
+      "duration-300",
+      "ease-in-out"
+    );
     deleteBtn.addEventListener("click", onDeletePost);
 
-    btnContainer.append(editBtn, deleteBtn);
-    postContainer.append(title, body, tags, likes, likeBtn, btnContainer);
+    const editBtn = document.createElement("a");
+    editBtn.href = `/post/edit/?id=${postId}`;
+    editBtn.textContent = "Edit";
+    editBtn.title = "Click to edit post";
+    editBtn.classList.add("edit-btn", "btn", "primary");
+
+    textContainer.append(title, body, tags);
+    likeContainer.append(likeBtn, likes);
+    btnContainer.append(deleteBtn, editBtn);
+    postContainer.append(likeContainer, textContainer, btnContainer);
 
     return postContainer;
   } catch (error) {

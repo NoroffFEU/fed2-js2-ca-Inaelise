@@ -1,8 +1,18 @@
 import { setLogoutListener } from "../../ui/global/logout";
 import { authGuard } from "../../utilities/authGuard";
 import { viewPosts, setupPagination } from "../../ui/post/viewPosts";
+import { toggleDropdown } from "../../utilities/dropdownMenu";
+import { toggleNavItems } from "../../utilities/toggleNavItems";
 
-authGuard();
-viewPosts();
-setupPagination();
-setLogoutListener();
+const token = localStorage.getItem("token");
+
+if (!token) {
+  window.location.href = "/auth/login/";
+} else {
+  authGuard();
+  viewPosts();
+  setupPagination();
+  setLogoutListener();
+  toggleDropdown();
+  toggleNavItems();
+}

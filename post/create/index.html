@@ -3,37 +3,171 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/images/site.webmanifest" />
+    <title>Create post</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <h1>Create Post</h1>
+  <body class="font-body pt-[55px] bg-white">
+    <header
+      class="bg-main flex justify-between p-3 fixed w-full top-0 drop-shadow z-20"
+    >
+      <img
+        class="w-[100px] md:w-[120px]"
+        src="/images/noroff-logo.png"
+        alt="Noroff Logo"
+      />
+      <nav
+        class="fixed top-[55px] left-0 bg-main w-full pt-3 pb-6 px-0 -translate-x-full transition-all duration-500 ease-in-out md:translate-x-0 md:transition-none md:top-0 md:bg-transparent md:py-5"
+      >
+        <ul
+          class="flex flex-col gap-4 items-center font-medium md:flex-row md:justify-end md:gap-8 md:px-4 md:text-sm"
+        >
+          <li>
+            <a id="home-nav" class="hover" title="Go to home" href="/">Home</a>
+          </li>
+          <li>
+            <a
+              id="profile-nav"
+              class="hover"
+              title="Go to profile"
+              href="/profile/"
+              >My Profile</a
+            >
+          </li>
+          <li>
+            <a
+              id="create-nav"
+              class="hover"
+              title="Go to create"
+              href="/post/create/"
+              >Create</a
+            >
+          </li>
+          <li>
+            <a
+              id="login-nav"
+              class="hover"
+              title="Go to log in"
+              href="/auth/login/"
+              >Log in</a
+            >
+          </li>
+          <li>
+            <a id="signup-nav" title="Go to register" href="/auth/register/"
+              >Sign up</a
+            >
+          </li>
+          <button class="btn secondary logout-btn" title="Click to log out">
+            Log out
+          </button>
+        </ul>
+      </nav>
+      <!-- Hamburger menu icon -->
+      <div
+        class="hamburger hover:cursor-pointer self-center md:hidden"
+        title="Click to open/close menu"
+      >
+        <div class="bar bar-one"></div>
+        <div class="bar bar-two"></div>
+        <div class="bar bar-three"></div>
+      </div>
+    </header>
 
-    <form name="createPost">
-      <div>
-        <label for="url">Image URL</label>
-        <input
-          name="url"
-          id="url"
-          type="url"
-          placeholder="https://example.com"
-          pattern="https://.*"
-          required
-        />
+    <main>
+      <div class="relative">
+        <h1
+          class="absolute z-10 top-[190px] left-[35px] text-3xl font-semibold sm:left-[80px] md:left-[120px] md:text-4xl lg:left-[160px] xl:left-[180px] 2xl:left-[240px]"
+        >
+          Create Post
+        </h1>
+        <div
+          class="custom-shape-divider-top-1730889672 absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180"
+        >
+          <svg
+            class="relative block [transform:rotateY(180deg)] w-[calc(100%+1.3px)] h-[160px] md:w-[calc(100%+1.3px)] md:h-[186px]"
+            data-name="Layer 3"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+              class="shape-fill fill-main"
+            ></path>
+          </svg>
+        </div>
+        <div
+          class="custom-shape-divider-top-1730889672 absolute top-[12px] left-0 w-full overflow-hidden leading-none rotate-180"
+        >
+          <svg
+            class="relative block [transform:rotateY(180deg)] w-[calc(100%+1.3px)] h-[170px] md:w-[calc(100%+1.3px)] md:h-[206px]"
+            data-name="Layer 4"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+              class="shape-fill fill-[#ace3d665]"
+            ></path>
+          </svg>
+        </div>
       </div>
-      <div>
-        <label for="title">Title</label>
-        <input name="title" id="title" type="text" required />
+      <div class="pt-[170px] md:pt-[230px]">
+        <form
+          name="createPost"
+          class="flex flex-col gap-6 items-center pt-[100px] pb-[50px]"
+        >
+          <div class="flex flex-col gap-1">
+            <label for="url" class="font-semibold">Image URL</label>
+            <input
+              name="url"
+              id="url"
+              type="url"
+              class="input"
+              placeholder="https://example.com"
+              pattern="https://.*"
+              required
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="title" class="font-semibold">Title</label>
+            <input name="title" id="title" type="text" class="input" required />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="body" class="font-semibold">Content</label>
+            <textarea name="body" id="body" class="input h-[150px]"></textarea>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="tags" class="font-semibold">Tags</label>
+            <input type="text" name="tags" id="tags" class="input" />
+          </div>
+          <button class="btn primary" title="Click to create post">
+            Create Post
+          </button>
+        </form>
       </div>
-      <div>
-        <label for="body">Content</label>
-        <textarea name="body" id="body"></textarea>
-      </div>
-      <div>
-        <label for="tags">Tags</label>
-        <input type="text" name="tags" id="tags" />
-      </div>
-      <button>Create Post</button>
-    </form>
+    </main>
+
+    <footer class="bg-footer">
+      <p class="text-sm">Copyright © 2024 My Social Media</p>
+    </footer>
   </body>
 </html>
