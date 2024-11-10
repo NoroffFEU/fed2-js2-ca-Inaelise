@@ -45,7 +45,13 @@ export async function viewPost() {
       const img = document.createElement("img");
       img.src = post.media.url;
       img.alt = post.media.alt || "Post image";
-      img.classList.add("sm:rounded-lg");
+      img.classList.add(
+        "h-[350px]",
+        "object-cover",
+        "w-full",
+        "sm:rounded-lg",
+        "lg:h-[420px]"
+      );
       postContainer.append(author, img);
     }
 
@@ -91,6 +97,9 @@ export async function viewPost() {
       "flex",
       "flex-col",
       "gap-4",
+      "break-words",
+      "text-wrap",
+      "max-w-[500px]",
       "sm:px-0"
     );
 
