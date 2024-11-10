@@ -50,9 +50,14 @@ export async function viewPosts() {
         );
         postContainer.append(img, title);
       } else {
-        const noImage = document.createElement("p");
-        noImage.textContent = "(No image available)";
-        noImage.classList.add("pt-2", "text-xs", "text-center");
+        const noImage = document.createElement("img");
+        noImage.src = "/images/default-img.png";
+        noImage.classList.add(
+          "object-cover",
+          "w-full",
+          "h-[280px]",
+          "md:h-[300px]"
+        );
         postContainer.append(noImage, title);
       }
 
